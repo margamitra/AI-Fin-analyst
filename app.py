@@ -136,9 +136,9 @@ def main():
         if st.sidebar.button("Submit & Process"):
             with st.spinner("Processing..."):
                 folder_mapping = {
-                    "APPLE": "AI Fin Analyst/10k_filings/AAPL",
-                    "GOOGLE": "AI Fin Analyst/10k_filings/GOOG",
-                    "AMAZON": "AI Fin Analyst/10k_filings/AMZ"
+                    "APPLE": "10k_filings/AAPL",
+                    "GOOGLE": "10k_filings/GOOG",
+                    "AMAZON": "10k_filings/AMZ"
                 }
 
                 selected_folder_path = folder_mapping.get(selected_option)
@@ -153,7 +153,7 @@ def main():
                         st.sidebar.warning("Invalid folder path.")
 
                     if pdf_files:
-                        delete_existing_files("AI Fin Analyst/10k_filings")
+                        delete_existing_files("10k_filings")
 
                         with concurrent.futures.ProcessPoolExecutor() as executor:
                             processed_text = executor.map(process_pdf, pdf_files)
