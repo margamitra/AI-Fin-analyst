@@ -4,6 +4,8 @@ This is the repo of the AI Financial Analyst app, which is basically a Google Ge
 
 **PS: The code for  Task1 (Downloading and Preprocessing the 10K files from SEC EDGAR) has been uploaded as an iPynb file named "SEC EDGAR 10K PReprocessing & Download**
 
+**App Link:** https://ai-fin-analyst-b7qrhtxwisk5tdvsffvdor.streamlit.app/
+
 ## **App Structure**
 
 <img width="249" alt="image" src="https://github.com/margamitra/AI-Fin-analyst/assets/72200003/7ed1c709-458a-4a0a-bf8a-57bfc18bd2f1">
