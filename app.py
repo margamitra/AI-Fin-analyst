@@ -10,9 +10,10 @@ from langchain.chains.question_answering import load_qa_chain
 from langchain.prompts import PromptTemplate
 import concurrent.futures
 
-GOOGLE_API_KEY = "AIzaSyCOi5fgjuMr_T31Z2QfL0M2O3ZZXp_FzlU"  # Replace with your actual Google Generative AI API key
+GOOGLE_API_KEY = "AIzaSyCOi5fgjuMr_T31Z2QfL0M2O3ZZXp_FzlU"
 genai.configure(api_key=GOOGLE_API_KEY)
 
+#Saving session states until the company is changed
 if "key_insights" not in st.session_state:
     st.session_state.key_insights = None
 
@@ -49,6 +50,7 @@ def get_text_chunks(text):
     return chunks
 
 
+#Getting the Vector Embeddings for the loaded documents 
 def get_vector_store(text_chunks):
     embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001", google_api_key=GOOGLE_API_KEY)
     vector_store = FAISS.from_texts(text_chunks, embedding=embeddings)
@@ -91,7 +93,7 @@ def user_input(user_question, chain, embeddings):
 
     return response["output_text"]
 
-
+#When user selects a different company, all documents relating to the previous company gets deleted
 def delete_existing_files(directory):
     for filename in os.listdir(directory):
         file_path = os.path.join(directory, filename)
