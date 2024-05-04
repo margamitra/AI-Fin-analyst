@@ -2,6 +2,8 @@
 
 This is the repo of the AI Financial Analyst app, which is basically a Google Gemini 1.5 powered LLM RAG Application that provides Key Insights to users about Companies based on their 10K Report filings. For demonstration purposes, only the 5 latest 10K filings for each of the three companies are considered. Moreover, the app also provides users with the ability to chat with the documents and ask the LLM about any query regarding the 10K reports. 
 
+**Note: The app takes some amount of time to process the documents. But once the documents are processed, the inference on them doesn't take much time at all. This is because loading the pdfs and cnverting into their vector forms take some time. I am trying to minimize this processing time in my next versions of the app**
+
 **PS: The code for  Task1 (Downloading and Preprocessing the 10K files from SEC EDGAR) has been uploaded as an iPynb file named "SEC EDGAR 10K PReprocessing & Download**
 
 **App Link:** https://ai-fin-analyst-b7qrhtxwisk5tdvsffvdor.streamlit.app/
